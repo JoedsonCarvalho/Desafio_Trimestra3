@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'style.css'%}">]
+	<link rel="stylesheet" href="{% static 'bootstrap-5.1.3-dist/css/bootstrap.min.css' %}">
+    <title>Produtos</title>
+</head>
+<body>
+
+{% include 'partials/_menu.html' %}
+    <!-- CONTEUDO PRODUTOS 1-->
+	<div class="guardaprodutos">
+		<div class="produtos " id="produtos" style=" width: 70%; margin: auto">
+		</div>
+
+		<div class="produtos2" id="produtos2" style="color: white;">
+		</div>
+	</div>
+	<!-- CONTEUDO PRODUTOS 2-->
+	<script src="{% static 'js/muda-aba.js'%}"></script>
+	<!-- <script src="{% static 'js/funcionarios.js'%}"></script> -->
+	<script src="{% static 'js/produtos.js'%}"></script>	
+	<script src="{% static 'bootstrap-5.1.3-dist/js/bootstrap.min.js'%}"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+div {
+    display: inline-block;
+}
+
+body {
+	background-color: #0693e3 !important;
+    background-image: url('img/imgfundo.png');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header h1 {
+	background: #FFFFFF;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.links{
+    width: 100%;
+    display: flex;
+   justify-content: center;
+   font-size: 22px;
+}
+
+
+#home a {
+    transition: all .1s;
+}
+
+#produto a {
+    transition: all .1s;
+}
+
+#empregado a {
+    transition: all .1s;
+}
+
+#navbar a:hover {
+    color: #ff6900;
+    transition-timing-function: ease-in-out;
+    -webkit-text-stroke: 1.85px #ff6900;
+    text-decoration: underline;
+}
+
+.navbars {
+    display: flex;
+    justify-content: center;
+}
+
+#navbar {
+	text-align: center;
+    padding: 5px;
+    background-color: #0693e3;
+    box-sizing: border-box;
+    border: 1px solid #0693e3;
+    width: 15rem;
+    cursor: pointer;
+}
+
+.mensagens {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+#mensagem{
+    display: none;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    background-color: #0693e3;
+    box-sizing: border-box;
+    border: 1px solid #0693e3;
+    border-radius: 10px;
+    
+    width: 25%;
+    font-weight: bold;
+}
+
+#mensagem2{
+    display: none;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    background-color: #0693e3;
+    box-sizing: border-box;
+    border: 1px solid #0693e3;
+    border-radius: 10px;
+   
+    width: 25%;
+    font-weight: bold;
+
+}
+
+#mensagem3
+{
+    display: none;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    background-color: #0693e3;
+    box-sizing: border-box;
+    border: 1px solid #0693e3;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 25%;
+    font-weight: bold;
+}
+
+
+#linkHome {
+
+    text-decoration: none; /* ta tirrando o sublinhado dos links */
+    color: black;
+    cursor: pointer;
+}
+
+
+#foto:hover {
+	color: #C78C19;
+}
+
+.products{
+    border: 3px solid white;
+    width: 10rem;
+    margin: 10px;
+    margin-top: 6%;
+    border-radius: 5px;
+    color: white;
+    /*
+    width: 70%;
+    margin: 90px;
+    */
+}
+
+.imagem-fundo{
+    background-image: url('img/fotos_dftri2/whats_image2.jpeg');
+}
+
+.guardaempregados{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.guardaprodutos{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    }
+
+.borda-cinza{
+    border: 3px solid white;
+    height: 350px;
+    width: 80%;
+    margin: 60px;
+    margin-top: -10%;
+    border-radius: 5px;
+    color: white;
+    /*
+    width: 70%;
+    margin: 90px;
+    */
+}
+    
+
+
+

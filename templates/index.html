@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html> 
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Pagína inicial</title>
+		<link rel="stylesheet" href= "{% static 'style.css'%}">
+		<link rel="stylesheet" href="{% static 'bootstrap-5.1.3-dist/css/bootstrap.min.css' %}">
+	</head>
+	<body>
+	
+		{% include 'partials/_menu.html' %}
+		
+		<div class="mensagens">
+			<div class="btn btn-primary" id="mensagem"> BOM DIA! </div>
+			<div class="btn btn-primary" id="mensagem2"> BOA TARDE! </div>
+			<div class="btn btn-primary" id="mensagem3"> BOA NOITE! </div>
+		</div>	
+
+		<br />
+		<!-- CONTEUDO HOME -->
+		<div style="display: flex;flex-direction: column;text-align: center;" class="contents">
+			<div class="home" id="home" style="margin-top: 4.5%;">
+				<div class="container" style="width: 46rem;">
+					<table class="table table-bordered text-center">
+						<thead>
+							<tr>
+								<th style="width: 50%; color: white;" scope="col">EMPREGADOS</th>
+								<th style="width: 50%; color: white; " scope="col">ULTIMAS VENDAS REALIZADAS</th>
+							</tr>
+						</thead>
+
+						<tbody id="data-output" style="color: white; font-size: 20px;">
+							
+						</tbody>
+					</table>	
+				</div>
+			</div>
+		</div>
+	</body>
+	<!-------------------- TERMINANDO A PARTE DE MENSAGENS  ----------------------->
+	<script src="{% static 'js/muda-horario.js'%}"></script>
+	<script src="{% static 'js/muda-aba.js'%}"></script>
+	<script src="{% static 'js/funcionarios.js'%}"></script>
+	<script src="{% static 'js/produtos.js'%}"></script>	
+	<script src="{% static 'bootstrap-5.1.3-dist/js/bootstrap.min.js'%}"></script>
+</html>
