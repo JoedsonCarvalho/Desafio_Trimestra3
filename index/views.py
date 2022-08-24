@@ -12,6 +12,7 @@ def produtos(request):
     return render(request, 'produtos.html')
 
 def detalhando_produto(request, produto_id):
+
     r = requests.get('http://18.231.157.213/api/products/'+str(produto_id), auth=('Publico', 'usuariopublico'))
     produto = json.loads(r.content)
     
@@ -37,3 +38,21 @@ def detalhando_produto(request, produto_id):
 
     
     return render(request, 'detalhe_produto.html', produtos_a_exibir)
+
+def exibindo_produtos(request):
+    r = requests.get('http://18.231.157.213/api/products/', auth=('Publico', 'usuariopublico'))
+    produtos_json = json.loads(r.content)
+    produtos_json = produtos_json['results']  
+    produtos = []
+    for produto in produtos_json: 
+        produto['product_name'] = produto['product_name'].replace('Northwind Traders ', '')
+        produto['url'] = produto['url'].replace("http://18.231.157.213/api/products/", "")
+        produtos = produto
+    
+    lista_produtos = {
+        'produtos': produtos_json,
+    }
+
+    return render(request, 'produtos2.html', lista_produtos)
+
+
