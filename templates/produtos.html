@@ -12,21 +12,18 @@
 <body>
 
 {% include 'partials/_menu.html' %}
-	
-	 <div id="produtos2" style="width:940px; display:block; margin: 25px auto; ">
+    <!-- CONTEUDO PRODUTOS 1-->
+	<div class="guardaprodutos">
+		<div class="produtos " id="produtos" style=" width: 70%; margin: auto">
+		</div>
 
-        <section id="principal" class="principal ">
-            <div class="load is-animation" id="load">
-            </div>
-        </section>
-        
-    </div>
-
-     
-
-	<script src="{% static 'js/produtos2.js'%}"></script>	
-	<!-- <script src="{% static 'js/produtos.js'%}"></script>	 -->
+		<div class="produtos2" id="produtos2" style="color: white;">
+		</div>
+	</div>
+	<!-- CONTEUDO PRODUTOS 2-->
+	<script src="{% static 'js/muda-aba.js'%}"></script>
+	<!-- <script src="{% static 'js/funcionarios.js'%}"></script> -->
+	<script src="{% static 'js/produtos.js'%}"></script>	
 	<script src="{% static 'bootstrap-5.1.3-dist/js/bootstrap.min.js'%}"></script>
-
 </body>
 </html>
