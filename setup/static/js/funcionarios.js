@@ -1,4 +1,4 @@
-fetch('https://localhost:44314/funcionario/getultimasvendasfuncionario') /*pega o endpoint(caminho) de ultimas vendas da API*/
+fetch('https://localhost:5001/funcionario/getultimasvendasfuncionario') /*pega o endpoint(caminho) de ultimas vendas da API*/
     .then(function(response){
         return response.json();
     }) /*função passa dados da API para JSON */
@@ -25,7 +25,7 @@ fetch('https://localhost:44314/funcionario/getultimasvendasfuncionario') /*pega 
     }) // termina meu for 
 
 function listaDeEmpregados() {
-    fetch('https://localhost:44314/funcionario/getall')
+    fetch('https://localhost:5001/funcionario/getall')
         .then(function(response){
             return response.json();
         })
@@ -73,3 +73,58 @@ window.onload = function() {
     listaDeEmpregados();
 }
 
+function mudaaba2(data) {
+    console.log(data);
+    
+    const divempregados = document.getElementById('empregados');
+    const divempregados2 = document.getElementById('empregados2');
+    if (divempregados.style.display === 'block' && divempregados2.style.display === 'none') {
+        divempregados.style.display = 'none';
+        divempregados2.style.display = 'block';
+    }
+
+    let empregadosPai = document.querySelector('#empregados2');
+
+let out = `<div class="row">
+            <div class="col-sm-12" style="margin-left: -16rem; margin-top: 0rem;">	
+                <span><strong>Nome: </strong>${data.nome === 'null' ? '' : data.nome} ${data.sobrenome === 'null' ? '' : data.sobrenome}</span>
+            </div>
+        </div>
+        <div class="row">	
+            <div class="col-sm-12" style="margin-left: -250px;">	
+                <span><strong>Cargo: </strong>${data.cargo === 'null' ? '' : data.cargo}</span>
+            </div> 
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-sm-6" style= "margin-left: 8rem;">
+                <img style="width: 21rem; height: 20rem; margin-top: 0px;" id="foto" src="data:image/jpg;base64,${data.foto}">
+            </div>
+            <div class="col-sm-6" style="text-align: left; margin-left: 43rem; margin-top: -19rem;">
+                <span><strong>Id do empregado: </strong>${data.id === 'null' ? '' : data.id}</span>
+                <br/>
+                <span><strong>Telefone comercial: </strong>${data.telefoneComercial === 'null' ? '' : data.telefoneComercial}</span>
+                <br/>
+                <span><strong>Telefone residencial: </strong>${data.telefoneResidencial === 'null' ? '' : data.telefoneResidencial}</span>
+                <br/>
+                <span><strong>Telefone celular: </strong>${data.telefoneCelular === 'null' ? '' : data.telefoneCelular}</span>
+                <br/>
+                <span><strong>Endereço residencial:</strong>${data.endereco === 'null' ? '' : data.endereco}</span>
+                <br/>
+                <span><strong>Cidade: </strong>${data.cidade === 'null' ? '' : data.cidade}</span>
+                <br/>
+                <span><strong>Estado: </strong>${data.estado === 'null' ? '' : data.estado}</span>
+                <br/>
+                <span><strong>Código postal: </strong>${data.codigoPostal === 'null' ? '' : data.codigoPostal}</span>
+                <br/>
+                <span><strong>País: </strong>${data.pais === 'null' ? '' : data.pais}</span>
+                <br/>
+                <span><strong>Website: </strong>${data.website === 'null' ? '' : data.website}</span>
+                <br/>
+                <span><strong>Observação: </strong>${data.observacao === 'null' ? '' : data.observacao}</span>
+                <br/>
+            </div>
+        </div>
+    `;
+    empregadosPai.innerHTML = out;
+}

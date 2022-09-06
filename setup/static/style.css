@@ -199,11 +199,11 @@ header h1 {
 }
 
 .load {
-    border: 12px solid #13344a;
+    border: 8px solid #13344a;
     border-left-color: #ff6900;
     border-radius: 100%;
-    height: 110px;
-    width: 110px;
+    height: 90px;
+    width: 90px;
 }
 
 .is-animation {
