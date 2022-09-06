@@ -55,4 +55,8 @@ def exibindo_produtos(request):
 
     return render(request, 'produtos2.html', lista_produtos)
 
+def criar_produto(request):
+    return render(request, 'criar_produto.html')
 
+def load(request):
+    return render(request, 'partials/_load.html',)

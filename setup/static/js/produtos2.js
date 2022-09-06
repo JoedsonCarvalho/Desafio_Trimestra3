@@ -20,6 +20,8 @@ async function  insereProdutos(data){
 }
 
 function listaDeProdutos() {
+    let loading = document.getElementById('principal')
+    loading.style.display = 'block'
 
     fetch('http://18.231.157.213/api/products/', {
         headers: {'Authorization': `Basic ${btoa('Publico:usuariopublico')}` }
@@ -32,9 +34,7 @@ function listaDeProdutos() {
     })
     .catch((err) => console.log(err))
     //colocar o load na tela
-    // .finally(() => {
-
-    // })
+    .finally(() => loading.style.display = 'none')
 }
 
 window.onload = function() {
