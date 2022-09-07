@@ -39,6 +39,9 @@ def detalhando_produto(request, produto_id):
     
     return render(request, 'detalhe_produto.html', produtos_a_exibir)
 
+def detalhando_funcionario(request):
+    return render(request, 'detalhando_funcionario.html')
+
 def exibindo_produtos(request):
     r = requests.get('http://18.231.157.213/api/products/', auth=('Publico', 'usuariopublico'))
     produtos_json = json.loads(r.content)

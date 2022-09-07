@@ -1,5 +1,5 @@
 fetch('https://localhost:5001/funcionario/getultimasvendasfuncionario') /*pega o endpoint(caminho) de ultimas vendas da API*/
-    .then(function(response){
+    .then((response) =>{
         return response.json();
     }) /*função passa dados da API para JSON */
 
@@ -24,10 +24,50 @@ fetch('https://localhost:5001/funcionario/getultimasvendasfuncionario') /*pega o
         placeholder.innerHTML = out; // a variavel placeholder que referencia a minha tabela dentro do HTML esta exibindo na tela o conteúdo da variavel OUT
     }) // termina meu for 
 
+
+async function exibeFuncionarios(results){
+    let placeholder = document.querySelector("#empregados");
+    let out = "";
+    
+    for(let data of results){
+        let teste = document.createElement("div");
+        teste.innerHTML = 
+        `
+        
+        <div class="borda-cinza">
+            <img style="width: 100%; height: 10rem; margin-right: 0%; cursor: pointer;" id="foto" src="data:image/jpg;base64,${data.foto}">
+            <h5 style="margin: 5%;">
+                Nome
+            </h5>
+            <p style="margin-top: 5px; font-size: 20px;">
+                ${data.nome} ${data.sobrenome}
+            </p>
+            <h5 style="margin: 5%;">
+                Cargo
+            </h5>
+            <p style="margin-top: 5px; font-size: 20px;">
+                ${data.cargo}
+            </p>
+        </div>
+            
+
+        `;
+
+        teste.onclick = function(){
+            mudaaba2(data)
+        };
+        placeholder.appendChild(teste);
+    }
+}
+
+
+
 function listaDeEmpregados() {
     fetch('https://localhost:5001/funcionario/getall')
         .then(function(response){
-            return response.json();
+            response.json().then((data) => {
+                exibeFuncionarios(data)                
+            })
         })
         .then(function(results){
             let placeholder = document.querySelector("#empregados");

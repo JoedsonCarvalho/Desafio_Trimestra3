@@ -6,7 +6,7 @@ async function  insereProdutos(data){
     for (produto of listaComProdutos){
         divProduto += `
         <div class="products" style="vertical-align:top; width:20%;">
-            <a style="text-decoration: none; color:white;" href='${produto.url.replace('http://18.231.157.213/api/products/' , '')}' >
+            <a style="text-decoration: none; color:white;" href='produtos/${produto.url.replace('http://18.231.157.213/api/products/' , '')}' >
                 <img style="width: 100%; height: 10rem; margin-right: 0%; cursor: pointer;" id="foto" src="${produto.attachaments}">
         
                 <p style="margin-top: 5%; font-size: 22px;text-weight:bold; text-align:center; vertical-align: top;">
